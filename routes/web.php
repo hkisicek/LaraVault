@@ -27,4 +27,6 @@ Route::prefix('admin')->group(function (){
     Route::get('/logout','Auth\AdminLoginController@logout')->name('admin.logout');
 });
 
+Route::get('upload','UploadController@index');
+Route::post('store','UploadController@store');
 
