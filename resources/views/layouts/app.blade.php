@@ -68,6 +68,9 @@
                                         Upload
                                         </a>
                                     </li>
+                                    <li>
+                                        Download
+                                    </li>
                                 </ul>
                             </li>
                         @endif
