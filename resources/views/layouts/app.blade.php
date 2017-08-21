@@ -63,6 +63,11 @@
                                             {{ csrf_field() }}
                                         </form>
                                     </li>
+                                    <li>
+                                        <a href="{{route('upload')}}">
+                                        Upload
+                                        </a>
+                                    </li>
                                 </ul>
                             </li>
                         @endif

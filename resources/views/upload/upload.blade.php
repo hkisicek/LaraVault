@@ -1,27 +1,40 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="utf-8">
-    <title>Upload Files</title>
+@extends('layouts.app')
 
-    <!-- Bootstrap -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
-
-    <!-- JQuery -->
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
-</head>
-<body>
-    <br>
+@section('content')
     <div class="col-lg-offset col-lg-4">
         <center><h1>Choose file to upload</h1></center>
         <form action="/store" enctype="multipart/form-data" method="post">
             {{csrf_field()}}
-            <input type="file" name="file">
+            <div class="form-group">
+                <label for="exampleInputEmail">File Title</label>
+                <input type="text" class="form-control" id="title" name="title" aria-describedby="titleHelp" placeholder="Enter file title" required>
+                <small id="titleHelp" class="form-text text-muted">This title will be displayed.</small>
+            </div>
+
+            <div class="form-group">
+                <label for="exampleInputEmail">File Description</label>
+                <input type="text" class="form-control" id="description" name="description" aria-describedby="descriptionHelp" placeholder="Enter file description" required>
+                <small id="descriptionHelp" class="form-text text-muted">Describe your file.</small>
+            </div>
+
+            <fieldset class="form-group">
+                <legend>Is this file public or private?</legend>
+                <div class="form-check">
+                    <label class="form-check-label">
+                        <input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios1" value="1" checked>
+                        My file is public.
+                    </label>
+                </div>
+                <div class="form-check">
+                    <label class="form-check-label">
+                        <input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios2" value="0">
+                        My file is private.
+                    </label>
+                </div>
+            </fieldset>
+            <input type="file" name="file" required>
             <br>
-            <input type="submit" value="upload">
+            <input type="submit" value="Upload">
         </form>
     </div>
-</body>
-</html>
+@endsection

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class UploadController extends Controller
 {
@@ -11,8 +12,16 @@ class UploadController extends Controller
         return view('upload.upload');
     }
 
-    public function store(Request $request)
+    public function store(request $request)
     {
-        return $request->file('file');
+        if($request->hasFile('file')) {
+
+            $request->file('file');
+            return Storage::putFile('public',$request->file('file'));
+
+        }else{
+
+            return "No file selected";
+        }
     }
 }
