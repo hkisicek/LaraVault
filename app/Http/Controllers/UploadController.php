@@ -25,14 +25,15 @@ class UploadController extends Controller
 
             $request->file('file');
 
+            $name=$request->file('file')->hashName();
             $type=$request->file('file')->extension();
-            $bytes=$request->file('file')->getClientSize();
-            $reference=$request->file('file')->path();
+            $bytes=$request->file('file')->getSize();
+            $reference=$request->file('file')->getBasename();
             $downloaded=0;
             $user=Auth::user()->id;
 
-
-            $input=array('type'=>$type,
+            $input=array('name'=>$name,
+                         'type'=>$type,
                          'size'=>$bytes,
                          'user'=>$user,
                          'downloaded'=>$downloaded,

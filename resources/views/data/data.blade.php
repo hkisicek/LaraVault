@@ -11,6 +11,7 @@
             <th>Description</th>
             <th>Download</th>
         </tr>
+
     @foreach($data as $row)
         <tr>
             <td>{{$row->title}}</td>
@@ -19,7 +20,13 @@
             <td>{{$row->user}}</td>
             <td>{{$row->downloaded}}</td>
             <td>{{$row->description}}</td>
-            <td><a>Ce da skines</a></td>
+
+            @php
+                $params=['name'=>$row->name];
+                $url = route('download', $params);
+            @endphp
+
+            <td><a href="{{$url}}">Download</a></td>
         </tr>
     @endforeach
     </table>

@@ -30,4 +30,5 @@ Route::prefix('admin')->group(function (){
 Route::get('upload','UploadController@index')->name('upload');
 Route::post('store','UploadController@store')->name('store');
 Route::get('data','DataController@index')->name('data');
+Route::get('download','DownloadController@download')->name('download');
 

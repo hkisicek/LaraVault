@@ -13,7 +13,8 @@ class Asset extends Model
 
     public $timestamps=false;
 
-    protected $fillable=array('title',
+    protected $fillable=array('name',
+                              'title',
                               'description',
                               'type',
                               'size',

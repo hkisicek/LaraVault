@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 
 class DataController extends Controller
 {
+    //show view
     public function index()
     {
         $data=Asset::all();
