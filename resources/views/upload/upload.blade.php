@@ -3,7 +3,7 @@
 @section('content')
     <div class="col-lg-offset col-lg-4">
         <center><h1>Choose file to upload</h1></center>
-        <form action="/store" enctype="multipart/form-data" method="post">
+        <form action="store" enctype="multipart/form-data" method="post">
             {{csrf_field()}}
             <div class="form-group">
                 <label for="exampleInputEmail">File Title</label>
@@ -21,18 +21,18 @@
                 <legend>Is this file public or private?</legend>
                 <div class="form-check">
                     <label class="form-check-label">
-                        <input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios1" value="1" checked>
+                        <input type="radio" class="form-check-input" name="public" id="optionsRadios1" value="1" checked>
                         My file is public.
                     </label>
                 </div>
                 <div class="form-check">
                     <label class="form-check-label">
-                        <input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios2" value="0">
+                        <input type="radio" class="form-check-input" name="public" id="optionsRadios2" value="0">
                         My file is private.
                     </label>
                 </div>
             </fieldset>
-            <input type="file" name="file" required>
+            <input type="file" name="file" >
             <br>
             <input type="submit" value="Upload">
         </form>

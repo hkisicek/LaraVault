@@ -28,5 +28,5 @@ Route::prefix('admin')->group(function (){
 });
 
 Route::get('upload','UploadController@index')->name('upload');
-Route::post('store','UploadController@store');
+Route::post('store','UploadController@store')->name('store');
 
