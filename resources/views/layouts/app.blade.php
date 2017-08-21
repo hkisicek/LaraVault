@@ -62,14 +62,17 @@
                                         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                             {{ csrf_field() }}
                                         </form>
-                                    </li>
+
                                     <li>
                                         <a href="{{route('upload')}}">
-                                        Upload
+                                            Upload
                                         </a>
                                     </li>
+
                                     <li>
-                                        Download
+                                        <a href="{{route('data')}}">
+                                            Download
+                                        </a>
                                     </li>
                                 </ul>
                             </li>

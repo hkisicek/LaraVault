@@ -36,18 +36,6 @@ class AssetController extends Controller
      */
     public function store(Request $request)
     {
-      /*  $asset=new Asset([
-            'title'=>$request->get('title'),
-            'type'=>$request->get('type'),
-            'size'=>$request->get('size'),
-            'public'=>$request->get('public'),
-            'user'=>$request->get('user'),
-            'downloaded'=>$request->get('downloaded'),
-            'reference'=>$request->get('reference'),
-            'description'=>$request->get('description')
-
-        ]);*/
-
 
     }
 
