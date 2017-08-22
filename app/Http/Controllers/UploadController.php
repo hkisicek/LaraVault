@@ -48,7 +48,8 @@ class UploadController extends Controller
 
         }else{
 
-            return "No file selected";
+            echo "No file selected";
         }
+        return redirect('/upload');
     }
 }

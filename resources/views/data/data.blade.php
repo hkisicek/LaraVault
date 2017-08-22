@@ -13,6 +13,7 @@
         </tr>
 
     @foreach($data as $row)
+        @if($row->public)
         <tr>
             <td>{{$row->title}}</td>
             <td>{{$row->type}}</td>
@@ -28,6 +29,7 @@
 
             <td><a href="{{$url}}">Download</a></td>
         </tr>
+            @endif
     @endforeach
     </table>
 @endsection
