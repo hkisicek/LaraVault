@@ -12,6 +12,7 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{asset('css/animated.css')}}" rel="stylesheet">
 </head>
 <body>
     <div id="app">
@@ -87,5 +88,6 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>
+    <script src="{{asset('js/animated.js')}}"></script>
 </body>
 </html>

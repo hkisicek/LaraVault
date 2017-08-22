@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="col-lg-offset col-lg-4">
+    <div class="col-lg-offset col-lg-6">
         <center><h1>Choose file to upload</h1></center>
         <form action="store" enctype="multipart/form-data" method="post">
             {{csrf_field()}}
